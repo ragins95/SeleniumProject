@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Testing Recruit crm application">
+	<listeners>
+		<listener class-name="com.qa.util.ListenersCheck"></listener>
+	</listeners>
+  
+	   
+  
+   <test name="Login to the Application">
+      <parameter name="email" value="ragins95@gmail.com"/>
+      <parameter name="password" value="ragins95"/>
+	   <parameter name="TCName" value="Login to the Application"/>
+	   	<classes>
+      	<class name="com.qa.testcases.LoginPageTest"/>
+	  	</classes>
+	</test>  
+  
+  
+    <test name="Update user profile">
+ 	   <parameter name="TCName" value="Update user profile"/>
+	   	<classes>
+      	<class name="com.qa.testcases.UpdateProfileTest"/>
+	   	</classes>
+	</test> 
+	   
+	
+	 <test name="Download sample file to import candidate details">   
+	 	 <parameter name="TCName" value="Download sample file to import candidate details"/>  
+     	 <classes>
+ 		<class name="com.qa.testcases.DownloadSampleFileTest"/>
+      	</classes>
+  	</test> 
+  	
+  	
+     <test name="import candidate details">     
+     	 <parameter name="TCName" value="import candidate details"/>
+      	<classes>
+ 			<class name="com.qa.testcases.ImportCandidatesTest"/>
+     	 </classes>
+	  </test>
+	  
+	  
+	<test name="Get job ID using job name">
+  		<parameter name="TCName" value="Get job ID using job name"/> 
+    	 <parameter name="jobName" value="Tester"/>
+     	<parameter name="TCName" value="Get job ID using job name"/>
+	   	<classes>
+      	<class name="com.qa.testcases.getJobIDTest"/>
+	   </classes>   
+ 	 </test> 
+
+ 	 
+	 <test name="Add new company">  
+ 	<parameter name="TCName" value="Add new company"/>
+   	 <parameter name="expectedMsg" value="Company Added"/>   
+      <classes>
+ 		<class name="com.qa.testcases.CreateCompanyTest"/>
+      </classes>
+  	</test>
+  	
+  	
+ 	<test name="Add duplicate company"> 
+ 	<parameter name="TCName" value="Add duplicate company"/> 
+   	 <parameter name="expectedMsg" value="Duplicate Contact Updated. No Company Created"/>   
+      <classes>
+ 		<class name="com.qa.testcases.CreateCompanyTest"/>
+      </classes>
+ 	 </test>
+	     
+  
+    <test name="Sign Out">
+    
+	   <parameter name="TCName" value="Sign Out"/>
+	   	<classes>
+      <class name="com.qa.testcases.SignOut"/>
+	   </classes>   
+ 	 </test>    
+	    
+</suite>
